@@ -27,9 +27,9 @@ class NeuralNetwork(object):
         
     def feedForward(self, X):
         #forward propogation through the network
-        self.z = np.dot(X, self.W1) #dot product of X (input) and first set of weights (3x2)
+        self.z = np.dot(X, self.W1) #dot product of X (input) and first set of weights (400x8)
         self.z2 = self.sigmoid(self.z) #activation function
-        self.z3 = np.dot(self.z2, self.W2) #dot product of hidden layer (z2) and second set of weights (3x1)
+        self.z3 = np.dot(self.z2, self.W2) #dot product of hidden layer (z2) and second set of weights (400x1)
         output = self.sigmoid(self.z3)
         return output
         
