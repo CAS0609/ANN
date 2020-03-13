@@ -7,8 +7,8 @@ from numpy import loadtxt
 
 dataset = loadtxt('KP_PA01_SA_SE_for BPANN small - 3rd version.csv', delimiter=',')
 
-X = dataset[:,0:8]
-y = dataset[:,8]
+X = dataset[:,0:8] # shape (400,8)
+y = dataset[:,8]   # shape (400)
 
 # scale units
 X = X/np.amax(X, axis=0) #maximum of X array
@@ -22,8 +22,8 @@ class NeuralNetwork(object):
         self.hiddenSize = 400
         
         #weights
-        self.W1 = np.random.randn(self.inputSize, self.hiddenSize) # (3x2) weight matrix from input to hidden layer
-        self.W2 = np.random.randn(self.hiddenSize, self.outputSize) # (3x1) weight matrix from hidden to output layer
+        self.W1 = np.random.randn(self.inputSize, self.hiddenSize) # (400x8) weight matrix from input to hidden layer
+        self.W2 = np.random.randn(self.hiddenSize, self.outputSize) # (400x1) weight matrix from hidden to output layer
         
     def feedForward(self, X):
         #forward propogation through the network
