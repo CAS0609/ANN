@@ -7,8 +7,8 @@ from numpy import loadtxt
 
 dataset = loadtxt('KP_PA01_SA_SE_for BPANN small - 3rd version.csv', delimiter=',')
 
-X = dataset[:,0:8] # shape (400,8)
-y = dataset[:,8]   # shape (400)
+X = np.array((dataset[:,0:8]), dtype=float)
+y = np.array((dataset[:,8]), dtype=float)
 
 # scale units
 X = X/np.amax(X, axis=0) #maximum of X array
